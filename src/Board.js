@@ -1,7 +1,9 @@
 import Dice from "./Dice";
 
 //props : 컴포넌트에 지정한 속성 (properties의 줄임말 / 각각의 속성은 prop 이라고 한다.)
-function Board({ name, color, num, sum, gameHistory }) {
+function Board({ name, color, gameHistory }) {
+    const num = gameHistory[gameHistory.length - 1] || 1;
+    const sum = gameHistory.reduce((a,b) => a+b, 0);
     return (
         <div>
             <h2>{name}</h2>
