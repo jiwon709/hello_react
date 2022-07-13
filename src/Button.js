@@ -1,43 +1,10 @@
-const style = {
-    //속성 : '값' 형식
-    padding : '14px 27px',
-    border : 'solid 1px #7090ff',
-    outline : 'none',
-    color : '#7090ff',
-    cursor : 'pointer',
-    backgroundColor : 'rgba(0, 89, 255, 0.2)',
-    borderRadius : '30px',
-    fontSize : '17px'
-}
-
-//style 나눠주기
-const baseButtonStyle = {
-    padding : '14px 27px',
-    borderRadius : '30px',
-    outline : 'none',
-    cursor : 'pointer',
-    fontSize : '17px'
-}
-
-const blueButtonStyle = {
-    ...baseButtonStyle,
-    backgroundColor : 'rgba(0, 89, 255, 0.2)',
-    border : 'solid 1px #7090ff',
-    color : '#7090ff',
-}
-
-const redButtonStyle = {
-    ...baseButtonStyle,
-    backgroundColor : 'rgba(255, 78, 78, 0.2)',
-    border : 'solid 1px #ff4664',
-    color : '#ff4664',
-}
+import './Button.css'
 
 //props 에 대한 처리를 위한 js
-function Button({ children, onClick, color }) {
-    const style = color === 'red' ? redButtonStyle : blueButtonStyle;
+function Button({ children, onClick, color = 'blue', className = ''}) { //실수로 color props를 전달하지 않으면 undifiend가 들어갈 수 있으니 디폴트 값 필요
+    const classNames = `Button ${color} ${className}`;    //클래스명을 추가할 때 빈 공백이 필요하다
     return (
-        <button style={style} onClick={onClick}>
+        <button className={classNames} onClick={onClick}>
             {children}
         </button>
     );
