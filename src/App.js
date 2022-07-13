@@ -1,6 +1,7 @@
 import Board from "./Board";
 import Button from "./Button";
 import { useState } from "react";
+import './App.css';
 
 //각 컴포넌트의 state를 한 곳에서 관리하고 싶으면 
 //부모 컴포넌트의 state로 옮겨서 props로 내려줄 수 있다
@@ -30,11 +31,11 @@ function App() {
     //변경사항들을 효율적으로 이용할 수 있다.
     //Virtual DOM : 효율적으로 화면을 처리할 수 있다
     return (
-        <div>
+        <div className="App">
             <div>
                 {/* <Button text="던지기" /> */}
-                <Button color="blue" onClick={handleRollClick}>던지기</Button>
-                <Button color="red" onClick={handleClearClick}>처음부터</Button>
+                <Button className="App-button" color="blue" onClick={handleRollClick}>던지기</Button>
+                <Button className="App-button" color="red" onClick={handleClearClick}>처음부터</Button>
             </div>
             <div>
                 <Board name="나" color="blue" gameHistory={myHistory} />
