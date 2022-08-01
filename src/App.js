@@ -2,6 +2,7 @@ import Board from "./Board";
 import Button from "./Button";
 import { useState } from "react";
 import './App.css';
+import logoImg from './assets/logo.png';
 
 //각 컴포넌트의 state를 한 곳에서 관리하고 싶으면 
 //부모 컴포넌트의 state로 옮겨서 props로 내려줄 수 있다
